@@ -1,0 +1,33 @@
+package MyCircle1;
+
+public class HighScoresO {
+	private String name;
+	private int score;
+	public HighScoresO(String s, int i)
+	{
+		this.name = s;
+		this.score = i;
+	}
+	public void setName(String s)
+	{
+		this.name = s;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public void setScore(int i)
+	{
+		this.score = i;
+	}
+	public int getScore()
+	{
+		return this.score;
+	}
+	public String toString()
+	{
+		String str =  name + ":" +   score;
+		return str;
+	}
+
+}

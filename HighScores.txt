@@ -1,0 +1,70 @@
+package com.company;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class highScores {
+    public static void main(String[] args){
+        ArrayList<String> names = new ArrayList<>();
+        ArrayList<Integer> scores = new ArrayList<>();
+        initialize(names, scores);
+        sort(names,scores);
+        display(names,scores);
+
+
+    }
+
+public static void initialize(ArrayList<String> names, ArrayList<Integer> scores)
+{
+    final Scanner keyword = new Scanner(System.in);
+    for(int i = 0; i < 5; i++)
+    {
+        System.out.printf("Enter the name for score #%d: ", i +1);
+        names.add(keyword.nextLine());
+        System.out.printf("Enter the score for score #%d: ",i+1);
+        scores.add(Integer.parseInt(keyword.nextLine()));
+
+    }
+    System.out.println();
+    keyword.close();
+
+
+}
+public static  void sort(ArrayList<String> names, ArrayList<Integer>scores)
+{
+    int i = indexOfLargest(scores);
+    swap(names,scores,0,i);
+
+}
+public static void swap(ArrayList<String>names, ArrayList<Integer>scores, int i1 , int i2)
+{
+    String tempN = names.get(i1);
+    int tempS = scores.get(i1);
+    scores.set(i1, scores.get(i2));
+    names. set(i1, names.get(i2));
+    names.set(i2, tempN);
+    scores.set(i2, tempS);
+}
+public static int indexOfLargest( ArrayList<Integer> scores)
+    {
+        int indexOfLargest = 0;
+        for(int i = 1; i < scores.size(); i++)
+        {
+            if(scores.get(i)> scores.get(indexOfLargest))
+            {
+                indexOfLargest = i;
+            }
+        }
+        return indexOfLargest;
+
+    }
+    public static void display(ArrayList<String> names, ArrayList<Integer> scores)
+    {
+        System.out.println("Top Scores :");
+        for(int i = 0; i < names.size();i++)
+        {
+            System.out.println(names.get(i) + ":\t" + scores.get(i));
+        }
+    }
+
+
+}
