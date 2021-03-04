@@ -1,0 +1,16 @@
+button{
+    font-size: 1em;
+    color:white;
+    background-color: rgb(114, 143, 238);
+    transition: color 0.3s ease-in, background-color 0.3 ease-in;
+    border-radius: 4px;
+    padding: 15px;
+    display: inline-block;
+    text-align: center;
+    
+    
+}
+button:hover{
+    background-color: royalblue;
+    cursor: pointer;
+}
